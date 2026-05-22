@@ -1,4 +1,4 @@
-# Paper C BMC MRM reproducibility code - PSR + delta* sensitivity
+# Reproducibility code - PSR + delta* sensitivity
 
 This folder is a self-contained repository to run the Paper C simulation pipeline on a VM (e.g., GCP). If this folder is uploaded to GitHub, the contents of this folder should be placed at the repository root.
 
@@ -81,7 +81,7 @@ License: MIT License
 Restrictions: the MIMIC-IV demo dataset is not redistributed and requires PhysioNet credentialing and compliance with the data use agreement
 
 
-## v13 final note
+## note
 
 The quickcheck includes explicit output validation. It fails if the expected raw tables, summary tables, and Figures 1-4 are not created or if the residual-sensitivity curves contain no finite logRR values. The virtual sensitivity engine was also made more robust across R versions by using `delete.response()` and dropping the Cox-model intercept column, which prevents counterfactual linear predictors from becoming NA in small Windows/RStudio quickcheck runs. These changes affect code robustness only and do not change the manuscript estimands or full analysis specification.
 
