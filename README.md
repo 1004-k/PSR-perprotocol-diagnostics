@@ -81,11 +81,6 @@ License: MIT License
 Restrictions: the MIMIC-IV demo dataset is not redistributed and requires PhysioNet credentialing and compliance with the data use agreement
 
 
-## note
+## Note
 
 The quickcheck includes explicit output validation. It fails if the expected raw tables, summary tables, and Figures 1-4 are not created or if the residual-sensitivity curves contain no finite logRR values. The virtual sensitivity engine was also made more robust across R versions by using `delete.response()` and dropping the Cox-model intercept column, which prevents counterfactual linear predictors from becoming NA in small Windows/RStudio quickcheck runs. These changes affect code robustness only and do not change the manuscript estimands or full analysis specification.
-
-
-## v13 fix
-
-The Figure 1 script now calls `data.table::fifelse()` explicitly. This avoids a Windows/RStudio failure in `scripts/23_make_paperc_figures.R` when `data.table` is available but not attached to the search path. This is a namespace fix only; it does not change the analysis specification.
